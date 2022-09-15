@@ -1,0 +1,67 @@
+.formPrdouct {
+  width: 30%;
+  height: 89%;
+  padding: 28px;
+  border-radius: 12px;
+  background: #fde4e4;
+  position: absolute;
+  top: 100%;
+  transform: translateY(-50%) scale(0.8);
+  opacity: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+  transition-delay: 0s;
+}
+
+.containerlogin {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dinbodyLogin {
+  background: #34495e;
+}
+.LoginErrors {
+  color: red;
+  margin-top: 5px;
+  font-size: 15px;
+}
+.formProductsDash {
+  margin-bottom: -20px;
+}
+.input-groupProductsdash .inputdash {
+  padding: 12px 40px 12px 20px;
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid var(--dark-grey);
+  width: 100%;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  margin-top: 30px;
+}
+.titleProduct {
+  padding-top: 0;
+}
+
+.btn-submit-addProduct {
+  padding: 12px 0;
+  display: block;
+  width: 100%;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-weight: 500;
+  background: var(--blue);
+  margin-bottom: 23px;
+  font-size: 20px;
+  margin-top: 25px;
+  margin-bottom: 14px;
+  background: #a569bd;
+}
+.btn-submit-addProduct:hover {
+  background: var(--dark-blue);
+}

@@ -1,0 +1,51 @@
+.formPrdouct {
+  width: 100%;
+  height: 50%;
+
+  border-radius: 12px;
+  background: #fde4e4;
+  top: 70%;
+}
+.title {
+  padding-top: 100px;
+  margin-bottom: 25;
+}
+
+.containerlogin {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dinbodyLogin {
+  background: #34495e;
+}
+.LoginErrors {
+  color: red;
+  margin-top: 5px;
+  font-size: 15px;
+}
+.formProductsDash {
+  margin-bottom: -20px;
+}
+.inputEditdash {
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid var(--dark-grey);
+  width: 300%;
+
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.inputEdit {
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid var(--dark-grey);
+  width: 300%;
+  height: 30px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  margin-top: 30px;
+}
