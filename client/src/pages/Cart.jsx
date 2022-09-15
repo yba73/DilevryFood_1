@@ -8,20 +8,29 @@ import "../styles/cart-page.css";
 import { Container, Row, Col } from "reactstrap";
 import { cartActions } from "../store/shopping-cart/cartSlice";
 import { Link } from "react-router-dom";
-import { getCart } from "../store/shopping-cart/myCartSlice";
+import { getCart, UpdateTotal } from "../store/shopping-cart/myCartSlice";
 import { getProducts } from "../store/shopping-cart/productSlice";
 import Tr from "../components/UI/cart/Tr";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
-  const totalAmount = useSelector((state) => state.myCart.totalAmount);
+  let totalAmount = useSelector((state) => state.myCart.totalAmount);
 
   const myCart = useSelector((state) => state.myCart.cartItems);
   // console.log(totalAmount);
-  // console.log("Mycart", myCart);
+  console.log("Mycart", myCart);
+
+  totalAmount = myCart[0]?.products.reduce(
+    (totalAmount, current) =>
+      totalAmount + current.quantity * current.productId.price,
+    0
+  );
+  // console.log("somme", totalAmount);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCart());
+    dispatch(UpdateTotal(totalAmount));
   }, []);
 
   useEffect(() => {

@@ -32,9 +32,18 @@ const FoodDetails = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const product = ProductList.find((product) => product.id === +params.id);
+  let totalAmount = useSelector((state) => state.myCart.totalAmount);
+  console.log("totalAmount", totalAmount);
 
   const [previewImg, setPreviewImg] = useState(product.image01);
   const { _id: productId, title, price, category, desc, image01 } = product;
+  const myCart = useSelector((state) => state.myCart.cartItems);
+
+  let total = myCart[0]?.products.reduce(
+    (total, current) => total + current.quantity * current.productId.price,
+    0
+  );
+
   console.log("product", product);
   const quantity = 1;
 
@@ -52,6 +61,7 @@ const FoodDetails = () => {
         image01,
         productId,
         quantity,
+        total,
       })
     );
   };

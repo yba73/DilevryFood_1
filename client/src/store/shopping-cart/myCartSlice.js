@@ -56,6 +56,7 @@ export const deleteCart = createAsyncThunk(
     }
   }
 );
+//
 
 // removeCart
 export const removeCart = createAsyncThunk(
@@ -84,9 +85,18 @@ const myCartSlice = createSlice({
     totalAmount: 0,
     errors: null,
   },
+
+  //UpdateTotal
+  reducers: {
+    UpdateTotal: (state, action) => {
+      state.totalAmount = action.payload.totalAmount;
+    },
+  },
+
   extraReducers: {
     [getCart.fulfilled]: (state, action) => {
       state.cartItems = action.payload;
+      state.totalAmount = action.paload;
       state.errors = null;
     },
     [getCart.rejected]: (state, action) => {
@@ -96,3 +106,4 @@ const myCartSlice = createSlice({
 });
 
 export default myCartSlice.reducer;
+export const { UpdateTotal } = myCartSlice.actions;
